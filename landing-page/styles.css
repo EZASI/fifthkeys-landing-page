@@ -1030,6 +1030,10 @@ section {
     box-shadow: var(--shadow-md);
     text-align: center;
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    /* Performance optimizations */
+    contain: layout style paint;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .stat-card:hover {
@@ -2568,7 +2572,7 @@ blockquote {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: var(--spacing-2xl);
     margin-top: var(--spacing-2xl);
 }
@@ -2580,6 +2584,10 @@ blockquote {
     border: 1px solid var(--border-color);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     text-align: center;
+    /* Performance optimizations */
+    contain: layout style paint;
+    will-change: transform, opacity;
+    transform: translateZ(0);
 }
 
 .feature-card:hover {
@@ -2798,6 +2806,10 @@ input:checked + .toggle-slider:before {
     border: 2px solid var(--border-color);
     position: relative;
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    /* Performance optimizations */
+    contain: layout style paint;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .pricing-card:hover {
@@ -4924,6 +4936,11 @@ select.error {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+    
+    /* Disable will-change for reduced motion */
+    .feature-card, .pricing-card, .stat-card, .story-card {
+        will-change: auto !important;
     }
 }
 
