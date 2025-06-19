@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FifthKeys Admin | Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light-mode">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../landing-page/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="../landing-page/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </a>
+                </div>
+                <button class="sidebar-close" aria-label="Close sidebar">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="index.html">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="leads.html">
+                            <i data-lucide="users"></i>
+                            <span>Lead Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="demos.html">
+                            <i data-lucide="calendar"></i>
+                            <span>Demo Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="onboarding.html">
+                            <i data-lucide="clipboard-check"></i>
+                            <span>Onboarding</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html">
+                            <i data-lucide="bar-chart-2"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="assets/user-avatar.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Sarah Johnson</h4>
+                        <p>Sales Manager</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1 class="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn" aria-label="Notifications">
+                            <i data-lucide="bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="action-btn" aria-label="Messages">
+                            <i data-lucide="message-square"></i>
+                            <span class="badge">5</span>
+                        </button>
+                        <button id="themeToggle" class="action-btn" aria-label="Toggle dark mode">
+                            <i data-lucide="sun" class="light-icon"></i>
+                            <i data-lucide="moon" class="dark-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard">
+                <div class="welcome-section">
+                    <div class="welcome-message">
+                        <h2>Welcome back, Sarah!</h2>
+                        <p>Here's what's happening with your sales pipeline today.</p>
+                    </div>
+                    <div class="date-picker">
+                        <button class="date-range-btn">
+                            <i data-lucide="calendar"></i>
+                            <span>Last 30 Days</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background-color: rgba(59, 130, 246, 0.1);">
+                            <i data-lucide="users" style="color: #3B82F6;"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Total Leads</h3>
+                            <div class="metric-value">1,482</div>
+                            <div class="metric-trend positive">
+                                <i data-lucide="trending-up"></i>
+                                <span>12.5% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background-color: rgba(16, 185, 129, 0.1);">
+                            <i data-lucide="calendar-check" style="color: #10B981;"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Demo Bookings</h3>
+                            <div class="metric-value">284</div>
+                            <div class="metric-trend positive">
+                                <i data-lucide="trending-up"></i>
+                                <span>8.2% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background-color: rgba(245, 158, 11, 0.1);">
+                            <i data-lucide="percent" style="color: #F59E0B;"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Conversion Rate</h3>
+                            <div class="metric-value">19.2%</div>
+                            <div class="metric-trend positive">
+                                <i data-lucide="trending-up"></i>
+                                <span>2.1% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background-color: rgba(239, 68, 68, 0.1);">
+                            <i data-lucide="dollar-sign" style="color: #EF4444;"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Revenue Pipeline</h3>
+                            <div class="metric-value">$1.8M</div>
+                            <div class="metric-trend negative">
+                                <i data-lucide="trending-down"></i>
+                                <span>3.4% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-card large">
+                        <div class="card-header">
+                            <h3>Lead Generation & Conversion</h3>
+                            <div class="card-actions">
+                                <button class="btn btn-sm btn-outline">
+                                    <i data-lucide="download"></i>
+                                    Export
+                                </button>
+                                <button class="btn btn-sm btn-icon">
+                                    <i data-lucide="more-horizontal"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <canvas id="leadConversionChart" height="250"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Lead Sources</h3>
+                            <div class="card-actions">
+                                <button class="btn btn-sm btn-icon">
+                                    <i data-lucide="more-horizontal"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <canvas id="leadSourcesChart" height="220"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Sales Team Performance</h3>
+                            <div class="card-actions">
+                                <button class="btn btn-sm btn-icon">
+                                    <i data-lucide="more-horizontal"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <canvas id="teamPerformanceChart" height="220"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Upcoming Demos -->
+                <div class="dashboard-bottom">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="card-content">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(59, 130, 246, 0.1);">
+                                        <i data-lucide="user-plus" style="color: #3B82F6;"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>New Lead:</strong> Oceanview Resort (120 rooms)</p>
+                                        <span class="activity-time">10 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(16, 185, 129, 0.1);">
+                                        <i data-lucide="calendar-check" style="color: #10B981;"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Demo Completed:</strong> Mountain Lodge Group</p>
+                                        <span class="activity-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(245, 158, 11, 0.1);">
+                                        <i data-lucide="mail" style="color: #F59E0B;"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Email Sequence:</strong> Follow-up sent to Hilltop Boutique</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(239, 68, 68, 0.1);">
+                                        <i data-lucide="clipboard-check" style="color: #EF4444;"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Onboarding Milestone:</strong> Sunset Hotels completed setup</p>
+                                        <span class="activity-time">5 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background-color: rgba(139, 92, 246, 0.1);">
+                                        <i data-lucide="dollar-sign" style="color: #8B5CF6;"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Deal Closed:</strong> Riverside Inn ($24,000 ARR)</p>
+                                        <span class="activity-time">Yesterday</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Today's Demos</h3>
+                            <a href="#" class="view-all">View Calendar</a>
+                        </div>
+                        <div class="card-content">
+                            <div class="demo-list">
+                                <div class="demo-item">
+                                    <div class="demo-time">
+                                        <div class="time">09:30 AM</div>
+                                        <div class="duration">30 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Coastal Luxury Hotels</h4>
+                                        <p>Feature Deep Dive - Revenue Management</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="users"></i> Group Demo
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> Michael Chen
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="file-text"></i>
+                                            Prep
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="video"></i>
+                                            Join
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="demo-item">
+                                    <div class="demo-time">
+                                        <div class="time">11:00 AM</div>
+                                        <div class="duration">45 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Skyline Boutique Hotel</h4>
+                                        <p>Custom Demo - Full Platform Overview</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="user"></i> 1-on-1 Demo
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> Elena Rodriguez
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="file-text"></i>
+                                            Prep
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="video"></i>
+                                            Join
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="demo-item">
+                                    <div class="demo-time">
+                                        <div class="time">02:15 PM</div>
+                                        <div class="duration">60 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Mountain View Resorts</h4>
+                                        <p>Technical Demo - API & Integrations</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="code"></i> Technical Demo
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> David Wilson
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="file-text"></i>
+                                            Prep
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="video"></i>
+                                            Join
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="demo-item">
+                                    <div class="demo-time">
+                                        <div class="time">04:00 PM</div>
+                                        <div class="duration">30 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Urban Hostel Chain</h4>
+                                        <p>Quick Tour - Hostel-specific Features</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="clock"></i> Quick Tour
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> Sarah Johnson
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="file-text"></i>
+                                            Prep
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="video"></i>
+                                            Join
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FifthKeys Admin | Demo Bookings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+</head>
+<body class="light-mode">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../landing-page/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="../landing-page/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </a>
+                </div>
+                <button class="sidebar-close" aria-label="Close sidebar">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="leads.html">
+                            <i data-lucide="users"></i>
+                            <span>Lead Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="demos.html">
+                            <i data-lucide="calendar"></i>
+                            <span>Demo Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="onboarding.html">
+                            <i data-lucide="clipboard-check"></i>
+                            <span>Onboarding</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html">
+                            <i data-lucide="bar-chart-2"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="assets/user-avatar.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Sarah Johnson</h4>
+                        <p>Sales Manager</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1 class="page-title">Demo Bookings</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search demos...">
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn" aria-label="Notifications">
+                            <i data-lucide="bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="action-btn" aria-label="Messages">
+                            <i data-lucide="message-square"></i>
+                            <span class="badge">5</span>
+                        </button>
+                        <button id="themeToggle" class="action-btn" aria-label="Toggle dark mode">
+                            <i data-lucide="sun" class="light-icon"></i>
+                            <i data-lucide="moon" class="dark-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Demo Bookings Content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <div class="page-title-section">
+                        <h2>Demo Calendar & Management</h2>
+                        <p>Schedule, manage, and track all demo bookings</p>
+                    </div>
+                    <div class="page-actions">
+                        <button class="btn btn-outline">
+                            <i data-lucide="calendar-plus"></i>
+                            Schedule Demo
+                        </button>
+                        <button class="btn btn-primary">
+                            <i data-lucide="plus"></i>
+                            New Booking
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Demo Statistics -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(59, 130, 246, 0.1);">
+                            <i data-lucide="calendar" style="color: #3B82F6;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Today's Demos</h3>
+                            <div class="stat-value">8</div>
+                            <div class="stat-trend positive">2 completed</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(16, 185, 129, 0.1);">
+                            <i data-lucide="calendar-check" style="color: #10B981;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>This Week</h3>
+                            <div class="stat-value">42</div>
+                            <div class="stat-trend positive">+15% vs last week</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(245, 158, 11, 0.1);">
+                            <i data-lucide="percent" style="color: #F59E0B;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Show Rate</h3>
+                            <div class="stat-value">87%</div>
+                            <div class="stat-trend positive">+3% improvement</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(139, 92, 246, 0.1);">
+                            <i data-lucide="users" style="color: #8B5CF6;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Conversion</h3>
+                            <div class="stat-value">23%</div>
+                            <div class="stat-trend positive">Demo → Sales</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Demo Content -->
+                <div class="main-content-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Upcoming Demos</h3>
+                            <div class="card-actions">
+                                <div class="filter-tabs">
+                                    <button class="filter-tab active">Today</button>
+                                    <button class="filter-tab">This Week</button>
+                                    <button class="filter-tab">This Month</button>
+                                </div>
+                                <button class="btn btn-sm btn-outline">
+                                    <i data-lucide="calendar"></i>
+                                    Calendar View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="demo-list">
+                                <div class="demo-item">
+                                    <div class="demo-time">
+                                        <div class="time">09:30 AM</div>
+                                        <div class="duration">30 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Coastal Luxury Hotels</h4>
+                                        <p>Feature Deep Dive - Revenue Management</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="users"></i> Group Demo
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> Michael Chen
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="file-text"></i>
+                                            Prep
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="video"></i>
+                                            Join
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="demo-item">
+                                    <div class="demo-time">
+                                        <div class="time">11:00 AM</div>
+                                        <div class="duration">45 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Skyline Boutique Hotel</h4>
+                                        <p>Custom Demo - Full Platform Overview</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="user"></i> 1-on-1 Demo
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> Elena Rodriguez
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="file-text"></i>
+                                            Prep
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="video"></i>
+                                            Join
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="demo-item">
+                                    <div class="demo-time">
+                                        <div class="time">02:15 PM</div>
+                                        <div class="duration">60 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Mountain View Resorts</h4>
+                                        <p>Technical Demo - API & Integrations</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="code"></i> Technical Demo
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> David Wilson
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="file-text"></i>
+                                            Prep
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="video"></i>
+                                            Join
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="demo-item completed">
+                                    <div class="demo-time">
+                                        <div class="time">08:30 AM</div>
+                                        <div class="duration">30 min</div>
+                                    </div>
+                                    <div class="demo-details">
+                                        <h4>Urban Hostel Chain</h4>
+                                        <p>Quick Tour - Hostel-specific Features</p>
+                                        <div class="demo-meta">
+                                            <span class="demo-type">
+                                                <i data-lucide="clock"></i> Quick Tour
+                                            </span>
+                                            <span class="demo-lead">
+                                                <i data-lucide="user"></i> Alex Turner
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="demo-actions">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="mail"></i>
+                                            Follow Up
+                                        </button>
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="user-plus"></i>
+                                            Convert
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html> 

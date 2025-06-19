@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FifthKeys Admin | Onboarding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+</head>
+<body class="light-mode">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../landing-page/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="../landing-page/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </a>
+                </div>
+                <button class="sidebar-close" aria-label="Close sidebar">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="leads.html">
+                            <i data-lucide="users"></i>
+                            <span>Lead Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="demos.html">
+                            <i data-lucide="calendar"></i>
+                            <span>Demo Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="onboarding.html">
+                            <i data-lucide="clipboard-check"></i>
+                            <span>Onboarding</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html">
+                            <i data-lucide="bar-chart-2"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="assets/user-avatar.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Sarah Johnson</h4>
+                        <p>Sales Manager</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1 class="page-title">Onboarding</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search clients...">
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn" aria-label="Notifications">
+                            <i data-lucide="bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="action-btn" aria-label="Messages">
+                            <i data-lucide="message-square"></i>
+                            <span class="badge">5</span>
+                        </button>
+                        <button id="themeToggle" class="action-btn" aria-label="Toggle dark mode">
+                            <i data-lucide="sun" class="light-icon"></i>
+                            <i data-lucide="moon" class="dark-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Onboarding Content -->
+            <div class="onboarding-container">
+                <!-- Onboarding Actions -->
+                <div class="onboarding-actions">
+                    <div class="onboarding-filters">
+                        <div class="filter-group">
+                            <label for="statusFilter">Status</label>
+                            <select id="statusFilter" class="filter-select">
+                                <option value="all">All Statuses</option>
+                                <option value="not-started">Not Started</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="delayed">Delayed</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="assigneeFilter">Assignee</label>
+                            <select id="assigneeFilter" class="filter-select">
+                                <option value="all">All Assignees</option>
+                                <option value="sarah">Sarah Johnson</option>
+                                <option value="michael">Michael Chen</option>
+                                <option value="elena">Elena Rodriguez</option>
+                                <option value="david">David Wilson</option>
+                                <option value="alex">Alex Thompson</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-outline btn-sm">
+                            <i data-lucide="filter"></i>
+                            More Filters
+                        </button>
+                    </div>
+                    <div class="onboarding-buttons">
+                        <button class="btn btn-outline btn-sm">
+                            <i data-lucide="download"></i>
+                            Export
+                        </button>
+                        <button class="btn btn-primary btn-sm">
+                            <i data-lucide="plus"></i>
+                            New Client
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Onboarding Clients -->
+                <div class="onboarding-clients">
+                    <div class="onboarding-client-card">
+                        <div class="client-header">
+                            <div class="client-info">
+                                <div class="client-avatar" style="background-color: #3b82f6;">SH</div>
+                                <div>
+                                    <h3>Sunset Hotels</h3>
+                                    <p>Los Angeles, CA • 150 rooms</p>
+                                </div>
+                            </div>
+                            <div class="client-status completed">
+                                <i data-lucide="check-circle"></i>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                        <div class="client-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="progress-text">100% Complete</div>
+                        </div>
+                        <div class="client-milestones">
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Account Setup</h4>
+                                    <p>Completed on May 15, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Data Import</h4>
+                                    <p>Completed on May 18, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Staff Training</h4>
+                                    <p>Completed on May 25, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Go Live</h4>
+                                    <p>Completed on June 1, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-footer">
+                            <div class="client-team">
+                                <div class="team-member">
+                                    <img src="assets/david-avatar.jpg" alt="David Wilson">
+                                </div>
+                                <div class="team-member">
+                                    <img src="assets/elena-avatar.jpg" alt="Elena Rodriguez">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i data-lucide="file-text"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="onboarding-client-card">
+                        <div class="client-header">
+                            <div class="client-info">
+                                <div class="client-avatar" style="background-color: #f59e0b;">UH</div>
+                                <div>
+                                    <h3>Urban Hostel Chain</h3>
+                                    <p>Multiple Locations • 200 beds</p>
+                                </div>
+                            </div>
+                            <div class="client-status in-progress">
+                                <i data-lucide="clock"></i>
+                                <span>In Progress</span>
+                            </div>
+                        </div>
+                        <div class="client-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
+                            <div class="progress-text">50% Complete</div>
+                        </div>
+                        <div class="client-milestones">
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Account Setup</h4>
+                                    <p>Completed on June 5, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Data Import</h4>
+                                    <p>Completed on June 8, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone active">
+                                <div class="milestone-icon">
+                                    <i data-lucide="clock"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Staff Training</h4>
+                                    <p>Scheduled for June 15, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Go Live</h4>
+                                    <p>Scheduled for June 30, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-footer">
+                            <div class="client-team">
+                                <div class="team-member">
+                                    <img src="assets/user-avatar.jpg" alt="Sarah Johnson">
+                                </div>
+                                <div class="team-member">
+                                    <img src="assets/michael-avatar.jpg" alt="Michael Chen">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i data-lucide="file-text"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="onboarding-client-card">
+                        <div class="client-header">
+                            <div class="client-info">
+                                <div class="client-avatar" style="background-color: #10b981;">ML</div>
+                                <div>
+                                    <h3>Mountain Lodge Group</h3>
+                                    <p>Denver, CO • 85 rooms</p>
+                                </div>
+                            </div>
+                            <div class="client-status in-progress">
+                                <i data-lucide="clock"></i>
+                                <span>In Progress</span>
+                            </div>
+                        </div>
+                        <div class="client-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25%;"></div>
+                            </div>
+                            <div class="progress-text">25% Complete</div>
+                        </div>
+                        <div class="client-milestones">
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Account Setup</h4>
+                                    <p>Completed on June 9, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone active">
+                                <div class="milestone-icon">
+                                    <i data-lucide="clock"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Data Import</h4>
+                                    <p>In Progress</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Staff Training</h4>
+                                    <p>Scheduled for June 20, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Go Live</h4>
+                                    <p>Scheduled for July 5, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-footer">
+                            <div class="client-team">
+                                <div class="team-member">
+                                    <img src="assets/michael-avatar.jpg" alt="Michael Chen">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i data-lucide="file-text"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="onboarding-client-card">
+                        <div class="client-header">
+                            <div class="client-info">
+                                <div class="client-avatar" style="background-color: #8b5cf6;">RI</div>
+                                <div>
+                                    <h3>Riverside Inn</h3>
+                                    <p>Portland, OR • 80 rooms</p>
+                                </div>
+                            </div>
+                            <div class="client-status not-started">
+                                <i data-lucide="alert-circle"></i>
+                                <span>Not Started</span>
+                            </div>
+                        </div>
+                        <div class="client-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="progress-text">0% Complete</div>
+                        </div>
+                        <div class="client-milestones">
+                            <div class="milestone active">
+                                <div class="milestone-icon">
+                                    <i data-lucide="clock"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Account Setup</h4>
+                                    <p>Scheduled for June 15, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Data Import</h4>
+                                    <p>Scheduled for June 20, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Staff Training</h4>
+                                    <p>Scheduled for June 30, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Go Live</h4>
+                                    <p>Scheduled for July 15, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-footer">
+                            <div class="client-team">
+                                <div class="team-member">
+                                    <img src="assets/alex-avatar.jpg" alt="Alex Thompson">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i data-lucide="file-text"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="onboarding-client-card">
+                        <div class="client-header">
+                            <div class="client-info">
+                                <div class="client-avatar" style="background-color: #ef4444;">OV</div>
+                                <div>
+                                    <h3>Oceanview Resort</h3>
+                                    <p>Miami, FL • 120 rooms</p>
+                                </div>
+                            </div>
+                            <div class="client-status delayed">
+                                <i data-lucide="alert-triangle"></i>
+                                <span>Delayed</span>
+                            </div>
+                        </div>
+                        <div class="client-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25%;"></div>
+                            </div>
+                            <div class="progress-text">25% Complete</div>
+                        </div>
+                        <div class="client-milestones">
+                            <div class="milestone completed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Account Setup</h4>
+                                    <p>Completed on June 1, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone delayed">
+                                <div class="milestone-icon">
+                                    <i data-lucide="alert-triangle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Data Import</h4>
+                                    <p>Delayed - Awaiting client data</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Staff Training</h4>
+                                    <p>Scheduled for July 10, 2025</p>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-icon">
+                                    <i data-lucide="circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <h4>Go Live</h4>
+                                    <p>Scheduled for July 25, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-footer">
+                            <div class="client-team">
+                                <div class="team-member">
+                                    <img src="assets/user-avatar.jpg" alt="Sarah Johnson">
+                                </div>
+                                <div class="team-member">
+                                    <img src="assets/elena-avatar.jpg" alt="Elena Rodriguez">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i data-lucide="file-text"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>

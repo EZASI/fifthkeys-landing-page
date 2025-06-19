@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations | FifthKeys - Seamless Platform Integrations</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+</head>
+<body class="light-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle dark mode">
+            <i data-lucide="sun" class="light-icon"></i>
+            <i data-lucide="moon" class="dark-icon"></i>
+        </button>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li class="nav-item has-dropdown">
+                            <a href="/features.html">Features</a>
+                            <div class="dropdown-menu dropdown-large">
+                                <div class="dropdown-grid">
+                                    <div class="dropdown-section">
+                                        <h3>Core Features</h3>
+                                        <a href="/features.html#reservations" class="dropdown-item">
+                                            <i data-lucide="calendar"></i>
+                                            <div>
+                                                <h4>Reservations</h4>
+                                                <p>Streamline booking management</p>
+                                            </div>
+                                        </a>
+                                        <a href="/features.html#revenue" class="dropdown-item">
+                                            <i data-lucide="trending-up"></i>
+                                            <div>
+                                                <h4>Revenue Management</h4>
+                                                <p>Optimize pricing and yield</p>
+                                            </div>
+                                        </a>
+                                        <a href="/features.html#operations" class="dropdown-item">
+                                            <i data-lucide="settings"></i>
+                                            <div>
+                                                <h4>Operations</h4>
+                                                <p>Automate daily workflows</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h3>Guest Experience</h3>
+                                        <a href="/features.html#guest-experience" class="dropdown-item">
+                                            <i data-lucide="users"></i>
+                                            <div>
+                                                <h4>Guest Management</h4>
+                                                <p>Personalized guest experiences</p>
+                                            </div>
+                                        </a>
+                                        <a href="/features.html#payments" class="dropdown-item">
+                                            <i data-lucide="credit-card"></i>
+                                            <div>
+                                                <h4>Embedded Payments</h4>
+                                                <p>Seamless payment processing</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h3>Tools</h3>
+                                        <a href="/#roi-calculator" class="dropdown-item">
+                                            <i data-lucide="calculator"></i>
+                                            <div>
+                                                <h4>ROI Calculator <span class="badge-new">NEW</span></h4>
+                                                <p>Calculate your revenue potential</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="/solutions.html">Solutions</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <a href="/solutions.html#individual-properties" class="dropdown-item">
+                                        <i data-lucide="home"></i>
+                                        <div>
+                                            <h4>Individual Properties</h4>
+                                            <p>For boutique and independent hotels</p>
+                                        </div>
+                                    </a>
+                                    <a href="/solutions.html#groups-chains" class="dropdown-item">
+                                        <i data-lucide="buildings"></i>
+                                        <div>
+                                            <h4>Groups & Chains</h4>
+                                            <p>Multi-property management</p>
+                                        </div>
+                                    </a>
+                                    <a href="/solutions.html#small-hotels" class="dropdown-item">
+                                        <i data-lucide="hotel"></i>
+                                        <div>
+                                            <h4>Small Hotels</h4>
+                                            <p>Streamlined for smaller operations</p>
+                                        </div>
+                                    </a>
+                                    <a href="/solutions.html#hostels" class="dropdown-item">
+                                        <i data-lucide="tent"></i>
+                                        <div>
+                                            <h4>Hostels & Alternative</h4>
+                                            <p>For hostels and unique stays</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/integrations.html" class="active">Integrations</a>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="/resources.html">Resources</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <a href="/resources.html#blog" class="dropdown-item">
+                                        <i data-lucide="file-text"></i>
+                                        <div>
+                                            <h4>Blog</h4>
+                                            <p>Industry insights and tips</p>
+                                        </div>
+                                    </a>
+                                    <a href="/resources.html#guides" class="dropdown-item">
+                                        <i data-lucide="book-open"></i>
+                                        <div>
+                                            <h4>Guides</h4>
+                                            <p>In-depth resources</p>
+                                        </div>
+                                    </a>
+                                    <a href="/resources.html#case-studies" class="dropdown-item">
+                                        <i data-lucide="users"></i>
+                                        <div>
+                                            <h4>Case Studies</h4>
+                                            <p>Customer success stories</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <a href="https://app.fifthkeys.com" class="btn btn-outline">Login</a>
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                    <img src="/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                </a>
+            </div>
+            <button class="mobile-nav-close" aria-label="Close menu">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li class="mobile-nav-item">
+                    <button class="mobile-dropdown-toggle">
+                        Features <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown">
+                        <a href="/features.html#reservations" class="mobile-dropdown-item">
+                            <i data-lucide="calendar"></i> Reservations
+                        </a>
+                        <a href="/features.html#revenue" class="mobile-dropdown-item">
+                            <i data-lucide="trending-up"></i> Revenue Management
+                        </a>
+                        <a href="/features.html#operations" class="mobile-dropdown-item">
+                            <i data-lucide="settings"></i> Operations
+                        </a>
+                        <a href="/features.html#guest-experience" class="mobile-dropdown-item">
+                            <i data-lucide="users"></i> Guest Experience
+                        </a>
+                        <a href="/features.html#payments" class="mobile-dropdown-item">
+                            <i data-lucide="credit-card"></i> Payments
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <button class="mobile-dropdown-toggle">
+                        Solutions <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown">
+                        <a href="/solutions.html#individual-properties" class="mobile-dropdown-item">
+                            <i data-lucide="home"></i> Individual Properties
+                        </a>
+                        <a href="/solutions.html#groups-chains" class="mobile-dropdown-item">
+                            <i data-lucide="buildings"></i> Groups & Chains
+                        </a>
+                        <a href="/solutions.html#small-hotels" class="mobile-dropdown-item">
+                            <i data-lucide="hotel"></i> Small Hotels
+                        </a>
+                        <a href="/solutions.html#hostels" class="mobile-dropdown-item">
+                            <i data-lucide="tent"></i> Hostels & Alternative
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="/pricing.html">Pricing</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="/integrations.html">Integrations</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <button class="mobile-dropdown-toggle">
+                        Resources <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown">
+                        <a href="/resources.html#blog" class="mobile-dropdown-item">
+                            <i data-lucide="file-text"></i> Blog
+                        </a>
+                        <a href="/resources.html#guides" class="mobile-dropdown-item">
+                            <i data-lucide="book-open"></i> Guides
+                        </a>
+                        <a href="/resources.html#case-studies" class="mobile-dropdown-item">
+                            <i data-lucide="users"></i> Case Studies
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="/contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-nav-footer">
+            <a href="https://app.fifthkeys.com" class="btn btn-outline btn-block">Login</a>
+            <a href="#" class="btn btn-primary btn-block">Start Free Trial</a>
+        </div>
+    </div>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Seamless integrations</h1>
+                <p class="hero-subtitle">Connect FifthKeys with your favorite tools and platforms for streamlined hotel operations.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        Start Free Trial
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="/pricing.html" class="btn btn-outline btn-lg">
+                        View Pricing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Categories -->
+    <section class="integrations-overview">
+        <div class="container">
+            <h2 class="section-title">Connect with the tools you already use</h2>
+            <p class="section-subtitle">FifthKeys integrates with 200+ platforms to streamline your workflows</p>
+            
+            <div class="integrations-grid">
+                <div class="integration-category">
+                    <div class="integration-icon">
+                        <i data-lucide="credit-card"></i>
+                    </div>
+                    <h3>Payment Processing</h3>
+                    <p>Stripe, PayPal, Square, Authorize.net, and more</p>
+                    <div class="integration-logos">
+                        <span class="integration-badge">Stripe</span>
+                        <span class="integration-badge">PayPal</span>
+                        <span class="integration-badge">Square</span>
+                    </div>
+                </div>
+
+                <div class="integration-category">
+                    <div class="integration-icon">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <h3>OTAs & Distribution</h3>
+                    <p>Booking.com, Expedia, Airbnb, and major booking platforms</p>
+                    <div class="integration-logos">
+                        <span class="integration-badge">Booking.com</span>
+                        <span class="integration-badge">Expedia</span>
+                        <span class="integration-badge">Airbnb</span>
+                    </div>
+                </div>
+
+                <div class="integration-category">
+                    <div class="integration-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <h3>Email & Marketing</h3>
+                    <p>Mailchimp, SendGrid, HubSpot for guest communications</p>
+                    <div class="integration-logos">
+                        <span class="integration-badge">Mailchimp</span>
+                        <span class="integration-badge">HubSpot</span>
+                        <span class="integration-badge">SendGrid</span>
+                    </div>
+                </div>
+
+                <div class="integration-category">
+                    <div class="integration-icon">
+                        <i data-lucide="bar-chart"></i>
+                    </div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Google Analytics, Tableau, Power BI for insights</p>
+                    <div class="integration-logos">
+                        <span class="integration-badge">Google Analytics</span>
+                        <span class="integration-badge">Tableau</span>
+                        <span class="integration-badge">Power BI</span>
+                    </div>
+                </div>
+
+                <div class="integration-category">
+                    <div class="integration-icon">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <h3>Calendar & Scheduling</h3>
+                    <p>Google Calendar, Outlook, Calendly for appointments</p>
+                    <div class="integration-logos">
+                        <span class="integration-badge">Google Calendar</span>
+                        <span class="integration-badge">Outlook</span>
+                        <span class="integration-badge">Calendly</span>
+                    </div>
+                </div>
+
+                <div class="integration-category">
+                    <div class="integration-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3>Security & Compliance</h3>
+                    <p>SSO providers, compliance tools, and security platforms</p>
+                    <div class="integration-logos">
+                        <span class="integration-badge">Okta</span>
+                        <span class="integration-badge">Auth0</span>
+                        <span class="integration-badge">Azure AD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Access -->
+    <section class="api-section">
+        <div class="container">
+            <div class="api-content">
+                <div class="api-info">
+                    <h2>Powerful API for custom integrations</h2>
+                    <p class="lead">Need a custom integration? Our RESTful API provides complete access to FifthKeys functionality.</p>
+                    <div class="api-features">
+                        <div class="api-feature">
+                            <i data-lucide="code"></i>
+                            <div>
+                                <h4>RESTful API</h4>
+                                <p>Modern, standards-based API design</p>
+                            </div>
+                        </div>
+                        <div class="api-feature">
+                            <i data-lucide="book-open"></i>
+                            <div>
+                                <h4>Complete Documentation</h4>
+                                <p>Comprehensive guides and examples</p>
+                            </div>
+                        </div>
+                        <div class="api-feature">
+                            <i data-lucide="users"></i>
+                            <div>
+                                <h4>Developer Support</h4>
+                                <p>Dedicated technical support team</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">
+                        View API Documentation
+                        <i data-lucide="external-link"></i>
+                    </a>
+                </div>
+                <div class="api-code">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>API Example</span>
+                        </div>
+                        <pre><code>// Get reservation data
+GET /api/v1/reservations
+
+// Create new booking
+POST /api/v1/reservations
+{
+  "guest_name": "John Doe",
+  "check_in": "2024-06-15",
+  "check_out": "2024-06-18",
+  "room_type": "deluxe"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </div>
+                    <p>The cloud-native property management system trusted by hotels worldwide.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="/features.html">Features</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/pricing.html">Pricing</a></li>
+                        <li><a href="/integrations.html">Integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/resources.html">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 FifthKeys. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+</html> 

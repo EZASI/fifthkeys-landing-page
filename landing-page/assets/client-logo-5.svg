@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sun and Coast Icon -->
+  <circle cx="15" cy="12" r="6" fill="#F97316" opacity="0.3"/>
+  <circle cx="15" cy="12" r="3" fill="#F97316"/>
+  <path d="M5 25 Q20 22 30 25 L30 30 L5 30 Z" fill="#0EA5E9"/>
+  
+  <!-- Company Name -->
+  <text x="38" y="18" font-family="Arial" font-size="10" font-weight="bold" fill="#334155">COASTAL</text>
+  <text x="38" y="30" font-family="Arial" font-size="8" fill="#64748B">INNS</text>
+</svg> 

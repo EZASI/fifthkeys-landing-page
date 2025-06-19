@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mountain Icon -->
+  <path d="M5 25 L15 10 L20 15 L30 5 L35 25 Z" fill="#10B981"/>
+  <path d="M10 25 L20 12 L25 17 L30 25 Z" fill="#059669" opacity="0.7"/>
+  
+  <!-- Company Name -->
+  <text x="40" y="18" font-family="Arial" font-size="10" font-weight="bold" fill="#334155">MOUNTAIN</text>
+  <text x="40" y="30" font-family="Arial" font-size="8" fill="#64748B">LODGE</text>
+</svg> 

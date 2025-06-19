@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FifthKeys Admin | Lead Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+</head>
+<body class="light-mode">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../landing-page/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="../landing-page/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </a>
+                </div>
+                <button class="sidebar-close" aria-label="Close sidebar">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="leads.html">
+                            <i data-lucide="users"></i>
+                            <span>Lead Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="demos.html">
+                            <i data-lucide="calendar"></i>
+                            <span>Demo Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="onboarding.html">
+                            <i data-lucide="clipboard-check"></i>
+                            <span>Onboarding</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html">
+                            <i data-lucide="bar-chart-2"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="assets/user-avatar.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Sarah Johnson</h4>
+                        <p>Sales Manager</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1 class="page-title">Lead Management</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search leads...">
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn" aria-label="Notifications">
+                            <i data-lucide="bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="action-btn" aria-label="Messages">
+                            <i data-lucide="message-square"></i>
+                            <span class="badge">5</span>
+                        </button>
+                        <button id="themeToggle" class="action-btn" aria-label="Toggle dark mode">
+                            <i data-lucide="sun" class="light-icon"></i>
+                            <i data-lucide="moon" class="dark-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Lead Management Content -->
+            <div class="leads-container">
+                <!-- Lead Actions -->
+                <div class="leads-actions">
+                    <div class="leads-filters">
+                        <div class="filter-group">
+                            <label for="statusFilter">Status</label>
+                            <select id="statusFilter" class="filter-select">
+                                <option value="all">All Statuses</option>
+                                <option value="new">New</option>
+                                <option value="contacted">Contacted</option>
+                                <option value="qualified">Qualified</option>
+                                <option value="proposal">Proposal</option>
+                                <option value="negotiation">Negotiation</option>
+                                <option value="closed">Closed Won</option>
+                                <option value="lost">Closed Lost</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sourceFilter">Source</label>
+                            <select id="sourceFilter" class="filter-select">
+                                <option value="all">All Sources</option>
+                                <option value="website">Website</option>
+                                <option value="referral">Referral</option>
+                                <option value="social">Social Media</option>
+                                <option value="email">Email Campaign</option>
+                                <option value="event">Event</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="assigneeFilter">Assignee</label>
+                            <select id="assigneeFilter" class="filter-select">
+                                <option value="all">All Assignees</option>
+                                <option value="sarah">Sarah Johnson</option>
+                                <option value="michael">Michael Chen</option>
+                                <option value="elena">Elena Rodriguez</option>
+                                <option value="david">David Wilson</option>
+                                <option value="alex">Alex Thompson</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-outline btn-sm">
+                            <i data-lucide="filter"></i>
+                            More Filters
+                        </button>
+                    </div>
+                    <div class="leads-buttons">
+                        <button class="btn btn-outline btn-sm">
+                            <i data-lucide="download"></i>
+                            Export
+                        </button>
+                        <button class="btn btn-primary btn-sm">
+                            <i data-lucide="plus"></i>
+                            Add Lead
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lead Table -->
+                <div class="card">
+                    <div class="lead-table-container">
+                        <table class="lead-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="selectAll">
+                                            <label for="selectAll"></label>
+                                        </div>
+                                    </th>
+                                    <th>Lead</th>
+                                    <th>Contact</th>
+                                    <th>Status</th>
+                                    <th>Source</th>
+                                    <th>Size</th>
+                                    <th>Value</th>
+                                    <th>Assignee</th>
+                                    <th>Last Activity</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="lead1">
+                                            <label for="lead1"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-name">
+                                            <span class="lead-icon" style="background-color: #3b82f6;">OV</span>
+                                            <div>
+                                                <a href="#" class="lead-link">Oceanview Resort</a>
+                                                <span class="lead-location">Miami, FL</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-contact">
+                                            <div>James Wilson</div>
+                                            <a href="mailto:james@oceanviewresort.com">james@oceanviewresort.com</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge new">New</span>
+                                    </td>
+                                    <td>Website</td>
+                                    <td>120 rooms</td>
+                                    <td>$36,000</td>
+                                    <td>
+                                        <div class="assignee">
+                                            <img src="assets/user-avatar.jpg" alt="Sarah Johnson">
+                                            <span>Sarah Johnson</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="activity">
+                                            <div>Lead Created</div>
+                                            <span>10 minutes ago</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="mail"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="phone"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="more-vertical"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="lead2">
+                                            <label for="lead2"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-name">
+                                            <span class="lead-icon" style="background-color: #10b981;">ML</span>
+                                            <div>
+                                                <a href="#" class="lead-link">Mountain Lodge Group</a>
+                                                <span class="lead-location">Denver, CO</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-contact">
+                                            <div>Emily Chen</div>
+                                            <a href="mailto:emily@mountainlodge.com">emily@mountainlodge.com</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge qualified">Qualified</span>
+                                    </td>
+                                    <td>Referral</td>
+                                    <td>85 rooms</td>
+                                    <td>$25,500</td>
+                                    <td>
+                                        <div class="assignee">
+                                            <img src="assets/michael-avatar.jpg" alt="Michael Chen">
+                                            <span>Michael Chen</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="activity">
+                                            <div>Demo Completed</div>
+                                            <span>1 hour ago</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="mail"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="phone"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="more-vertical"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="lead3">
+                                            <label for="lead3"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-name">
+                                            <span class="lead-icon" style="background-color: #f59e0b;">HB</span>
+                                            <div>
+                                                <a href="#" class="lead-link">Hilltop Boutique</a>
+                                                <span class="lead-location">San Francisco, CA</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-contact">
+                                            <div>Robert Kim</div>
+                                            <a href="mailto:robert@hilltopboutique.com">robert@hilltopboutique.com</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge contacted">Contacted</span>
+                                    </td>
+                                    <td>Email Campaign</td>
+                                    <td>42 rooms</td>
+                                    <td>$12,600</td>
+                                    <td>
+                                        <div class="assignee">
+                                            <img src="assets/elena-avatar.jpg" alt="Elena Rodriguez">
+                                            <span>Elena Rodriguez</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="activity">
+                                            <div>Email Sent</div>
+                                            <span>2 hours ago</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="mail"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="phone"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="more-vertical"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="lead4">
+                                            <label for="lead4"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-name">
+                                            <span class="lead-icon" style="background-color: #ef4444;">SH</span>
+                                            <div>
+                                                <a href="#" class="lead-link">Sunset Hotels</a>
+                                                <span class="lead-location">Los Angeles, CA</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-contact">
+                                            <div>Maria Garcia</div>
+                                            <a href="mailto:maria@sunsethotels.com">maria@sunsethotels.com</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge closed">Closed Won</span>
+                                    </td>
+                                    <td>Social Media</td>
+                                    <td>150 rooms</td>
+                                    <td>$45,000</td>
+                                    <td>
+                                        <div class="assignee">
+                                            <img src="assets/david-avatar.jpg" alt="David Wilson">
+                                            <span>David Wilson</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="activity">
+                                            <div>Setup Completed</div>
+                                            <span>5 hours ago</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="mail"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="phone"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="more-vertical"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="lead5">
+                                            <label for="lead5"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-name">
+                                            <span class="lead-icon" style="background-color: #8b5cf6;">RI</span>
+                                            <div>
+                                                <a href="#" class="lead-link">Riverside Inn</a>
+                                                <span class="lead-location">Portland, OR</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-contact">
+                                            <div>Thomas Brown</div>
+                                            <a href="mailto:thomas@riversideinn.com">thomas@riversideinn.com</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge closed">Closed Won</span>
+                                    </td>
+                                    <td>Event</td>
+                                    <td>80 rooms</td>
+                                    <td>$24,000</td>
+                                    <td>
+                                        <div class="assignee">
+                                            <img src="assets/alex-avatar.jpg" alt="Alex Thompson">
+                                            <span>Alex Thompson</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="activity">
+                                            <div>Deal Closed</div>
+                                            <span>Yesterday</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="mail"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="phone"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="more-vertical"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="lead6">
+                                            <label for="lead6"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-name">
+                                            <span class="lead-icon" style="background-color: #14b8a6;">CH</span>
+                                            <div>
+                                                <a href="#" class="lead-link">Coastal Hideaway</a>
+                                                <span class="lead-location">Malibu, CA</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-contact">
+                                            <div>Sophia Lee</div>
+                                            <a href="mailto:sophia@coastalhideaway.com">sophia@coastalhideaway.com</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge proposal">Proposal</span>
+                                    </td>
+                                    <td>Website</td>
+                                    <td>35 rooms</td>
+                                    <td>$10,500</td>
+                                    <td>
+                                        <div class="assignee">
+                                            <img src="assets/user-avatar.jpg" alt="Sarah Johnson">
+                                            <span>Sarah Johnson</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="activity">
+                                            <div>Proposal Sent</div>
+                                            <span>2 days ago</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="mail"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="phone"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="more-vertical"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="lead7">
+                                            <label for="lead7"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-name">
+                                            <span class="lead-icon" style="background-color: #ec4899;">UH</span>
+                                            <div>
+                                                <a href="#" class="lead-link">Urban Hostel Chain</a>
+                                                <span class="lead-location">Multiple Locations</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="lead-contact">
+                                            <div>Daniel Park</div>
+                                            <a href="mailto:daniel@urbanhostel.com">daniel@urbanhostel.com</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge negotiation">Negotiation</span>
+                                    </td>
+                                    <td>Referral</td>
+                                    <td>200 beds</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="assignee">
+                                            <img src="assets/user-avatar.jpg" alt="Sarah Johnson">
+                                            <span>Sarah Johnson</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="activity">
+                                            <div>Call Scheduled</div>
+                                            <span>Today, 4:00 PM</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="mail"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="phone"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-sm">
+                                                <i data-lucide="more-vertical"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer">
+                        <div class="table-info">
+                            Showing <span>1-7</span> of <span>42</span> leads
+                        </div>
+                        <div class="pagination">
+                            <button class="pagination-btn" disabled>
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">4</button>
+                            <button class="pagination-btn">5</button>
+                            <button class="pagination-btn">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>

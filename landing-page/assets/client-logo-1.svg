@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ocean Wave Icon -->
+  <path d="M8 20c2-4 4-4 6 0s4 4 6 0 4-4 6 0" stroke="#0EA5E9" stroke-width="2" fill="none"/>
+  <path d="M8 25c2-4 4-4 6 0s4 4 6 0 4-4 6 0" stroke="#0EA5E9" stroke-width="2" fill="none"/>
+  
+  <!-- Company Name -->
+  <text x="35" y="18" font-family="Arial" font-size="10" font-weight="bold" fill="#334155">OCEANVIEW</text>
+  <text x="35" y="30" font-family="Arial" font-size="8" fill="#64748B">HOTELS</text>
+</svg> 

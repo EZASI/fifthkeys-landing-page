@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Skyline Icon -->
+  <rect x="5" y="15" width="4" height="15" fill="#8B5CF6"/>
+  <rect x="10" y="10" width="4" height="20" fill="#8B5CF6"/>
+  <rect x="15" y="12" width="4" height="18" fill="#8B5CF6"/>
+  <rect x="20" y="8" width="4" height="22" fill="#8B5CF6"/>
+  <rect x="25" y="18" width="4" height="12" fill="#8B5CF6"/>
+  
+  <!-- Company Name -->
+  <text x="35" y="18" font-family="Arial" font-size="10" font-weight="bold" fill="#334155">SKYLINE</text>
+  <text x="35" y="30" font-family="Arial" font-size="8" fill="#64748B">RESORTS</text>
+</svg> 

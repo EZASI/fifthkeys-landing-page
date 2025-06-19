@@ -1,0 +1,39 @@
+{
+    "name": "FifthKeys Hotel Management System",
+    "short_name": "FifthKeys",
+    "description": "Cloud-native property management system trusted by hotels worldwide",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#5C4FDB",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/assets/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "/assets/fifthkeys-logo.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/assets/screenshot-1.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "label": "Dashboard Overview"
+        },
+        {
+            "src": "/assets/screenshot-2.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "label": "Revenue Management"
+        }
+    ],
+    "categories": ["business", "productivity", "utilities"],
+    "lang": "en-US"
+} 

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FifthKeys Admin | Settings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+</head>
+<body class="light-mode">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../landing-page/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="../landing-page/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </a>
+                </div>
+                <button class="sidebar-close" aria-label="Close sidebar">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="leads.html">
+                            <i data-lucide="users"></i>
+                            <span>Lead Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="demos.html">
+                            <i data-lucide="calendar"></i>
+                            <span>Demo Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="onboarding.html">
+                            <i data-lucide="clipboard-check"></i>
+                            <span>Onboarding</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html">
+                            <i data-lucide="bar-chart-2"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="settings.html">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="assets/user-avatar.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h4>Sarah Johnson</h4>
+                        <p>Sales Manager</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1 class="page-title">Settings</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search settings...">
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn" aria-label="Notifications">
+                            <i data-lucide="bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="action-btn" aria-label="Messages">
+                            <i data-lucide="message-square"></i>
+                            <span class="badge">5</span>
+                        </button>
+                        <button id="themeToggle" class="action-btn" aria-label="Toggle dark mode">
+                            <i data-lucide="sun" class="light-icon"></i>
+                            <i data-lucide="moon" class="dark-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Settings Content -->
+            <div class="settings-container">
+                <!-- Settings Navigation -->
+                <div class="settings-nav">
+                    <div class="settings-nav-item active">
+                        <i data-lucide="user"></i>
+                        <span>Profile</span>
+                    </div>
+                    <div class="settings-nav-item">
+                        <i data-lucide="users"></i>
+                        <span>Team</span>
+                    </div>
+                    <div class="settings-nav-item">
+                        <i data-lucide="building"></i>
+                        <span>Company</span>
+                    </div>
+                    <div class="settings-nav-item">
+                        <i data-lucide="mail"></i>
+                        <span>Email</span>
+                    </div>
+                    <div class="settings-nav-item">
+                        <i data-lucide="bell"></i>
+                        <span>Notifications</span>
+                    </div>
+                    <div class="settings-nav-item">
+                        <i data-lucide="shield"></i>
+                        <span>Security</span>
+                    </div>
+                    <div class="settings-nav-item">
+                        <i data-lucide="credit-card"></i>
+                        <span>Billing</span>
+                    </div>
+                    <div class="settings-nav-item">
+                        <i data-lucide="code"></i>
+                        <span>Integrations</span>
+                    </div>
+                </div>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- Profile Settings -->
+                    <div class="settings-section active" id="profile-settings">
+                        <div class="settings-header">
+                            <h2>Profile Settings</h2>
+                            <p>Manage your personal information and preferences</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Personal Information</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="profile-avatar-section">
+                                    <div class="profile-avatar">
+                                        <img src="assets/user-avatar.jpg" alt="Sarah Johnson">
+                                    </div>
+                                    <div class="profile-avatar-actions">
+                                        <button class="btn btn-outline btn-sm">
+                                            <i data-lucide="upload"></i>
+                                            Upload New Photo
+                                        </button>
+                                        <button class="btn btn-outline btn-sm">
+                                            <i data-lucide="trash-2"></i>
+                                            Remove
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <form class="settings-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" id="firstName" value="Sarah" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" id="lastName" value="Johnson" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" value="sarah@fifthkeys.com" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" id="phone" value="(555) 123-4567" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jobTitle">Job Title</label>
+                                        <input type="text" id="jobTitle" value="Sales Manager" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bio">Bio</label>
+                                        <textarea id="bio" class="form-control" rows="4">Experienced sales manager with 8+ years in the hospitality industry. Passionate about helping hotels optimize their operations and increase revenue.</textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        <button type="button" class="btn btn-outline">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Preferences</h3>
+                            </div>
+                            <div class="card-content">
+                                <form class="settings-form">
+                                    <div class="form-group">
+                                        <label for="language">Language</label>
+                                        <select id="language" class="form-control">
+                                            <option value="en" selected>English</option>
+                                            <option value="es">Spanish</option>
+                                            <option value="fr">French</option>
+                                            <option value="de">German</option>
+                                            <option value="ja">Japanese</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="timezone">Time Zone</label>
+                                        <select id="timezone" class="form-control">
+                                            <option value="utc-8" selected>Pacific Time (UTC-8)</option>
+                                            <option value="utc-7">Mountain Time (UTC-7)</option>
+                                            <option value="utc-6">Central Time (UTC-6)</option>
+                                            <option value="utc-5">Eastern Time (UTC-5)</option>
+                                            <option value="utc">UTC</option>
+                                            <option value="utc+1">Central European Time (UTC+1)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dateFormat">Date Format</label>
+                                        <select id="dateFormat" class="form-control">
+                                            <option value="mm-dd-yyyy" selected>MM/DD/YYYY</option>
+                                            <option value="dd-mm-yyyy">DD/MM/YYYY</option>
+                                            <option value="yyyy-mm-dd">YYYY/MM/DD</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked>
+                                            <span>Enable desktop notifications</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked>
+                                            <span>Use dark mode by default</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save Preferences</button>
+                                        <button type="button" class="btn btn-outline">Reset to Default</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other settings sections would be here but hidden by default -->
+                    <div class="settings-section" id="team-settings">
+                        <!-- Team settings content -->
+                    </div>
+
+                    <div class="settings-section" id="company-settings">
+                        <!-- Company settings content -->
+                    </div>
+
+                    <div class="settings-section" id="email-settings">
+                        <!-- Email settings content -->
+                    </div>
+
+                    <div class="settings-section" id="notifications-settings">
+                        <!-- Notifications settings content -->
+                    </div>
+
+                    <div class="settings-section" id="security-settings">
+                        <!-- Security settings content -->
+                    </div>
+
+                    <div class="settings-section" id="billing-settings">
+                        <!-- Billing settings content -->
+                    </div>
+
+                    <div class="settings-section" id="integrations-settings">
+                        <!-- Integrations settings content -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize settings navigation
+            initSettingsNav();
+        });
+
+        function initSettingsNav() {
+            const navItems = document.querySelectorAll('.settings-nav-item');
+            const sections = document.querySelectorAll('.settings-section');
+            
+            navItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    // Remove active class from all items
+                    navItems.forEach(navItem => {
+                        navItem.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show corresponding section
+                    if (sections[index]) {
+                        sections[index].classList.add('active');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

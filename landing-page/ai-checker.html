@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Operations Checker | FifthKeys</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+</head>
+<body class="light-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle dark mode">
+            <i data-lucide="sun" class="light-icon"></i>
+            <i data-lucide="moon" class="dark-icon"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li class="nav-item has-dropdown">
+                            <a href="/features.html">Features</a>
+                            <div class="dropdown-menu dropdown-large">
+                                <div class="dropdown-grid">
+                                    <div class="dropdown-section">
+                                        <h3>Core Features</h3>
+                                        <a href="/features.html#reservations" class="dropdown-item">
+                                            <i data-lucide="calendar"></i>
+                                            <div>
+                                                <h4>Reservations</h4>
+                                                <p>Streamline booking management</p>
+                                            </div>
+                                        </a>
+                                        <a href="/features.html#revenue" class="dropdown-item">
+                                            <i data-lucide="trending-up"></i>
+                                            <div>
+                                                <h4>Revenue Management</h4>
+                                                <p>Optimize pricing and yield</p>
+                                            </div>
+                                        </a>
+                                        <a href="/features.html#operations" class="dropdown-item">
+                                            <i data-lucide="settings"></i>
+                                            <div>
+                                                <h4>Operations</h4>
+                                                <p>Automate daily workflows</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h3>Guest Experience</h3>
+                                        <a href="/features.html#guest-experience" class="dropdown-item">
+                                            <i data-lucide="users"></i>
+                                            <div>
+                                                <h4>Guest Management</h4>
+                                                <p>Personalized guest experiences</p>
+                                            </div>
+                                        </a>
+                                        <a href="/features.html#payments" class="dropdown-item">
+                                            <i data-lucide="credit-card"></i>
+                                            <div>
+                                                <h4>Embedded Payments</h4>
+                                                <p>Seamless payment processing</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <h3>Tools</h3>
+                                        <a href="/#roi-calculator" class="dropdown-item">
+                                            <i data-lucide="calculator"></i>
+                                            <div>
+                                                <h4>ROI Calculator <span class="badge-new">NEW</span></h4>
+                                                <p>Calculate your revenue potential</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="/solutions.html">Solutions</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <a href="/solutions.html#individual-properties" class="dropdown-item">
+                                        <i data-lucide="home"></i>
+                                        <div>
+                                            <h4>Individual Properties</h4>
+                                            <p>For boutique and independent hotels</p>
+                                        </div>
+                                    </a>
+                                    <a href="/solutions.html#groups-chains" class="dropdown-item">
+                                        <i data-lucide="buildings"></i>
+                                        <div>
+                                            <h4>Groups & Chains</h4>
+                                            <p>Multi-property management</p>
+                                        </div>
+                                    </a>
+                                    <a href="/solutions.html#small-hotels" class="dropdown-item">
+                                        <i data-lucide="hotel"></i>
+                                        <div>
+                                            <h4>Small Hotels</h4>
+                                            <p>Streamlined for smaller operations</p>
+                                        </div>
+                                    </a>
+                                    <a href="/solutions.html#hostels" class="dropdown-item">
+                                        <i data-lucide="tent"></i>
+                                        <div>
+                                            <h4>Hostels & Alternative</h4>
+                                            <p>For hostels and unique stays</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/integrations.html">Integrations</a>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="/resources.html">Resources</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <a href="/resources.html#blog" class="dropdown-item">
+                                        <i data-lucide="file-text"></i>
+                                        <div>
+                                            <h4>Blog</h4>
+                                            <p>Industry insights and tips</p>
+                                        </div>
+                                    </a>
+                                    <a href="/resources.html#guides" class="dropdown-item">
+                                        <i data-lucide="book-open"></i>
+                                        <div>
+                                            <h4>Guides</h4>
+                                            <p>In-depth resources</p>
+                                        </div>
+                                    </a>
+                                    <a href="/resources.html#case-studies" class="dropdown-item">
+                                        <i data-lucide="users"></i>
+                                        <div>
+                                            <h4>Case Studies</h4>
+                                            <p>Customer success stories</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <a href="https://app.fifthkeys.com" class="btn btn-outline">Login</a>
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                    <img src="/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                </a>
+            </div>
+            <button class="mobile-nav-close" aria-label="Close menu">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li class="mobile-nav-item">
+                    <button class="mobile-dropdown-toggle">
+                        Features <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown">
+                        <a href="/features.html#reservations" class="mobile-dropdown-item">
+                            <i data-lucide="calendar"></i> Reservations
+                        </a>
+                        <a href="/features.html#revenue" class="mobile-dropdown-item">
+                            <i data-lucide="trending-up"></i> Revenue Management
+                        </a>
+                        <a href="/features.html#operations" class="mobile-dropdown-item">
+                            <i data-lucide="settings"></i> Operations
+                        </a>
+                        <a href="/features.html#guest-experience" class="mobile-dropdown-item">
+                            <i data-lucide="users"></i> Guest Experience
+                        </a>
+                        <a href="/features.html#payments" class="mobile-dropdown-item">
+                            <i data-lucide="credit-card"></i> Payments
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <button class="mobile-dropdown-toggle">
+                        Solutions <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown">
+                        <a href="/solutions.html#individual-properties" class="mobile-dropdown-item">
+                            <i data-lucide="home"></i> Individual Properties
+                        </a>
+                        <a href="/solutions.html#groups-chains" class="mobile-dropdown-item">
+                            <i data-lucide="buildings"></i> Groups & Chains
+                        </a>
+                        <a href="/solutions.html#small-hotels" class="mobile-dropdown-item">
+                            <i data-lucide="hotel"></i> Small Hotels
+                        </a>
+                        <a href="/solutions.html#hostels" class="mobile-dropdown-item">
+                            <i data-lucide="tent"></i> Hostels & Alternative
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="/pricing.html">Pricing</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="/integrations.html">Integrations</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <button class="mobile-dropdown-toggle">
+                        Resources <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown">
+                        <a href="/resources.html#blog" class="mobile-dropdown-item">
+                            <i data-lucide="file-text"></i> Blog
+                        </a>
+                        <a href="/resources.html#guides" class="mobile-dropdown-item">
+                            <i data-lucide="book-open"></i> Guides
+                        </a>
+                        <a href="/resources.html#case-studies" class="mobile-dropdown-item">
+                            <i data-lucide="users"></i> Case Studies
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="/contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-nav-footer">
+            <a href="https://app.fifthkeys.com" class="btn btn-outline btn-block">Login</a>
+            <a href="#" class="btn btn-primary btn-block">Start Free Trial</a>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content text-center">
+                <h1>AI Operations Checker</h1>
+                <p class="lead">Discover how AI can transform your hotel operations. Get a personalized analysis and see your potential improvements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Checker Tool -->
+    <section class="ai-checker-section">
+        <div class="container">
+            <div class="ai-checker-container">
+                <div class="ai-checker-progress">
+                    <div class="progress-steps">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-circle">1</div>
+                            <span>Basic Info</span>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-circle">2</div>
+                            <span>Operations</span>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-circle">3</div>
+                            <span>Challenges</span>
+                        </div>
+                        <div class="progress-step" data-step="4">
+                            <div class="step-circle">4</div>
+                            <span>Results</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Basic Info -->
+                <div class="ai-checker-step active" id="step-1">
+                    <h2>Tell us about your property</h2>
+                    <p>This helps us provide more accurate recommendations</p>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Property Name</label>
+                            <input type="text" placeholder="e.g., Grand Hotel Plaza">
+                        </div>
+                        <div class="form-group">
+                            <label>Property Type</label>
+                            <select>
+                                <option>Hotel</option>
+                                <option>Resort</option>
+                                <option>Boutique Hotel</option>
+                                <option>Hostel</option>
+                                <option>Serviced Apartments</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Rooms</label>
+                            <input type="number" placeholder="e.g., 150">
+                        </div>
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" placeholder="City, Country">
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="btn btn-primary" onclick="nextStep(2)">
+                            Continue
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Operations -->
+                <div class="ai-checker-step" id="step-2">
+                    <h2>Current Operations</h2>
+                    <p>Select all that apply to your current setup</p>
+                    
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <div class="checkbox-content">
+                                <i data-lucide="computer"></i>
+                                <span>Using Property Management System</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <div class="checkbox-content">
+                                <i data-lucide="calendar"></i>
+                                <span>Online Booking Engine</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <div class="checkbox-content">
+                                <i data-lucide="trending-up"></i>
+                                <span>Revenue Management Tools</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <div class="checkbox-content">
+                                <i data-lucide="users"></i>
+                                <span>Guest Communication System</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <div class="checkbox-content">
+                                <i data-lucide="settings"></i>
+                                <span>Automated Check-in/Check-out</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <div class="checkbox-content">
+                                <i data-lucide="bar-chart"></i>
+                                <span>Analytics & Reporting Tools</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="btn btn-outline" onclick="previousStep(1)">
+                            <i data-lucide="arrow-left"></i>
+                            Back
+                        </button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">
+                            Continue
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Challenges -->
+                <div class="ai-checker-step" id="step-3">
+                    <h2>What are your biggest challenges?</h2>
+                    <p>Select up to 3 that matter most</p>
+                    
+                    <div class="challenge-grid">
+                        <label class="challenge-item">
+                            <input type="checkbox" name="challenge">
+                            <div class="challenge-content">
+                                <i data-lucide="clock"></i>
+                                <h4>Time-consuming manual tasks</h4>
+                                <p>Too much time on repetitive work</p>
+                            </div>
+                        </label>
+                        <label class="challenge-item">
+                            <input type="checkbox" name="challenge">
+                            <div class="challenge-content">
+                                <i data-lucide="trending-down"></i>
+                                <h4>Revenue optimization</h4>
+                                <p>Difficulty maximizing room rates</p>
+                            </div>
+                        </label>
+                        <label class="challenge-item">
+                            <input type="checkbox" name="challenge">
+                            <div class="challenge-content">
+                                <i data-lucide="users"></i>
+                                <h4>Guest satisfaction</h4>
+                                <p>Improving guest experience</p>
+                            </div>
+                        </label>
+                        <label class="challenge-item">
+                            <input type="checkbox" name="challenge">
+                            <div class="challenge-content">
+                                <i data-lucide="link"></i>
+                                <h4>System integration</h4>
+                                <p>Disconnected tools and platforms</p>
+                            </div>
+                        </label>
+                        <label class="challenge-item">
+                            <input type="checkbox" name="challenge">
+                            <div class="challenge-content">
+                                <i data-lucide="bar-chart"></i>
+                                <h4>Data insights</h4>
+                                <p>Lack of actionable analytics</p>
+                            </div>
+                        </label>
+                        <label class="challenge-item">
+                            <input type="checkbox" name="challenge">
+                            <div class="challenge-content">
+                                <i data-lucide="dollar-sign"></i>
+                                <h4>Operating costs</h4>
+                                <p>High operational expenses</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="btn btn-outline" onclick="previousStep(2)">
+                            <i data-lucide="arrow-left"></i>
+                            Back
+                        </button>
+                        <button class="btn btn-primary" onclick="generateResults()">
+                            Get AI Analysis
+                            <i data-lucide="sparkles"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Results -->
+                <div class="ai-checker-step" id="step-4">
+                    <div class="results-header">
+                        <i data-lucide="sparkles" class="results-icon"></i>
+                        <h2>Your AI-Powered Improvement Plan</h2>
+                        <p>Based on your inputs, here's how AI can transform your operations</p>
+                    </div>
+
+                    <div class="results-score">
+                        <div class="score-circle">
+                            <svg viewBox="0 0 200 200">
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="#e5e7eb" stroke-width="20"/>
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="#5C4FDB" stroke-width="20" 
+                                        stroke-dasharray="565" stroke-dashoffset="113" stroke-linecap="round"
+                                        transform="rotate(-90 100 100)"/>
+                            </svg>
+                            <div class="score-text">
+                                <span class="score-number">85%</span>
+                                <span class="score-label">AI Optimization Potential</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-icon">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <h3>Time Savings</h3>
+                            <div class="result-metric">12+ hours/week</div>
+                            <p>Automated guest communications, check-ins, and routine tasks</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h3>Revenue Increase</h3>
+                            <div class="result-metric">+35% RevPAR</div>
+                            <p>AI-powered dynamic pricing and demand forecasting</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon">
+                                <i data-lucide="star"></i>
+                            </div>
+                            <h3>Guest Satisfaction</h3>
+                            <div class="result-metric">+4.2 → 4.7 rating</div>
+                            <p>Personalized experiences and instant service responses</p>
+                        </div>
+                    </div>
+
+                    <div class="recommendations">
+                        <h3>Recommended AI Features for Your Property</h3>
+                        <div class="recommendation-list">
+                            <div class="recommendation-item">
+                                <i data-lucide="check-circle"></i>
+                                <div>
+                                    <h4>AI Revenue Optimizer</h4>
+                                    <p>Automatically adjust rates based on demand, events, and competitor pricing</p>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <i data-lucide="check-circle"></i>
+                                <div>
+                                    <h4>Smart Guest Communications</h4>
+                                    <p>AI chatbot for 24/7 guest support in multiple languages</p>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <i data-lucide="check-circle"></i>
+                                <div>
+                                    <h4>Predictive Maintenance</h4>
+                                    <p>Prevent equipment failures before they impact guests</p>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <i data-lucide="check-circle"></i>
+                                <div>
+                                    <h4>Intelligent Housekeeping</h4>
+                                    <p>Optimize cleaning schedules based on occupancy patterns</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-cta">
+                        <h3>Ready to implement AI in your hotel?</h3>
+                        <p>Get a personalized demo and see FifthKeys AI in action</p>
+                        <div class="cta-buttons">
+                            <a href="#" class="btn btn-primary btn-lg">
+                                Schedule Demo
+                                <i data-lucide="calendar"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline btn-lg">
+                                Download Full Report
+                                <i data-lucide="download"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/assets/fifthkeys-logo.svg" alt="FifthKeys Logo" class="logo-light">
+                        <img src="/assets/fifthkeys-logo-dark.svg" alt="FifthKeys Logo" class="logo-dark">
+                    </div>
+                    <p>The cloud-native property management system trusted by hotels worldwide.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="/features.html">Features</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/pricing.html">Pricing</a></li>
+                        <li><a href="/integrations.html">Integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/resources.html">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 FifthKeys. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/scripts.js"></script>
+    <script>
+        // AI Checker specific functionality
+        function nextStep(step) {
+            document.querySelectorAll('.ai-checker-step').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.progress-step').forEach(s => s.classList.remove('active'));
+            
+            document.getElementById(`step-${step}`).classList.add('active');
+            for(let i = 1; i <= step; i++) {
+                document.querySelector(`.progress-step[data-step="${i}"]`).classList.add('active');
+            }
+            
+            document.querySelector('.progress-fill').style.width = `${step * 25}%`;
+        }
+
+        function previousStep(step) {
+            nextStep(step);
+        }
+
+        function generateResults() {
+            nextStep(4);
+            // Animate the score circle
+            setTimeout(() => {
+                const circle = document.querySelector('.score-circle circle:last-child');
+                circle.style.transition = 'stroke-dashoffset 2s ease-out';
+                circle.style.strokeDashoffset = '113';
+            }, 100);
+        }
+
+        // Limit challenge selection to 3
+        document.querySelectorAll('input[name="challenge"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checked = document.querySelectorAll('input[name="challenge"]:checked');
+                if (checked.length >= 3) {
+                    document.querySelectorAll('input[name="challenge"]:not(:checked)').forEach(cb => {
+                        cb.disabled = true;
+                    });
+                } else {
+                    document.querySelectorAll('input[name="challenge"]').forEach(cb => {
+                        cb.disabled = false;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

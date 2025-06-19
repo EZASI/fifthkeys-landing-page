@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hotel Room Background -->
+  <rect width="800" height="600" fill="#F8FAFC"/>
+  
+  <!-- Window Frame -->
+  <rect x="100" y="100" width="600" height="400" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
+  
+  <!-- Window View - City Skyline -->
+  <rect x="104" y="104" width="592" height="392" rx="6" fill="#93C5FD"/>
+  
+  <!-- Skyline Buildings -->
+  <rect x="150" y="300" width="80" height="196" fill="#1E293B"/>
+  <rect x="160" y="250" width="20" height="50" fill="#1E293B"/>
+  <rect x="240" y="200" width="100" height="296" fill="#334155"/>
+  <rect x="350" y="250" width="70" height="246" fill="#1E293B"/>
+  <rect x="430" y="180" width="120" height="316" fill="#334155"/>
+  <rect x="560" y="280" width="90" height="216" fill="#1E293B"/>
+  
+  <!-- Window Reflections -->
+  <rect x="170" y="320" width="10" height="20" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="190" y="350" width="10" height="20" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="260" y="230" width="15" height="25" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="290" y="280" width="15" height="25" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="370" y="300" width="12" height="22" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="450" y="220" width="18" height="28" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="490" y="280" width="18" height="28" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="580" y="320" width="14" height="24" fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- Bed -->
+  <rect x="200" y="520" width="400" height="60" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
+  <rect x="200" y="510" width="400" height="20" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
+  
+  <!-- Pillows -->
+  <rect x="220" y="480" width="80" height="40" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="320" y="480" width="80" height="40" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Bedside Table -->
+  <rect x="620" y="500" width="80" height="80" fill="#F1F5F9"/>
+  <rect x="630" y="490" width="60" height="10" fill="#E2E8F0"/>
+  
+  <!-- Lamp -->
+  <rect x="645" y="460" width="30" height="30" rx="15" fill="#FEF3C7"/>
+  <rect x="655" y="460" width="10" height="30" fill="#FBBF24"/>
+  <rect x="655" y="480" width="10" height="10" fill="#F1F5F9"/>
+  
+  <!-- Plant -->
+  <path d="M120 500 C120 480 140 470 160 480 C180 490 140 510 120 500Z" fill="#10B981"/>
+  <path d="M130 510 C130 490 150 480 170 490 C190 500 150 520 130 510Z" fill="#059669"/>
+  <rect x="140" y="520" width="20" height="30" rx="10" fill="#D1D5DB"/>
+</svg>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | FifthKeys</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+</head>
+<body class="light-mode">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-xl);
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary-600);
+            line-height: 1;
+            margin-bottom: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        
+        .error-message {
+            font-size: 1.25rem;
+            color: var(--muted);
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .error-illustration {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto var(--spacing-2xl);
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle dark mode">
+            <i data-lucide="sun" class="light-icon"></i>
+            <i data-lucide="moon" class="dark-icon"></i>
+        </button>
+    </div>
+
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-illustration">
+                <svg viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="50" y="50" width="200" height="120" rx="8" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                    <circle cx="150" cy="110" r="40" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                    <path d="M130 110 L150 90 L170 110" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                    <path d="M150 90 L150 130" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                    <circle cx="100" cy="80" r="15" fill="currentColor" opacity="0.1"/>
+                    <circle cx="200" cy="130" r="20" fill="currentColor" opacity="0.1"/>
+                    <circle cx="80" cy="140" r="10" fill="currentColor" opacity="0.1"/>
+                </svg>
+            </div>
+            
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                Oops! The page you're looking for seems to have checked out. 
+                Let's get you back to where you need to be.
+            </p>
+            
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary btn-lg">
+                    <i data-lucide="home"></i>
+                    Go to Homepage
+                </a>
+                <a href="/contact" class="btn btn-outline btn-lg">
+                    <i data-lucide="message-circle"></i>
+                    Contact Support
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.className = savedTheme;
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.replace('light-mode', 'dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                body.classList.replace('dark-mode', 'light-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+        
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html> 
