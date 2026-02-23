@@ -16,14 +16,14 @@ type GridColor = 'blue' | 'indigo' | 'violet' | 'cyan' | 'teal' | 'emerald' | 'a
 
 const i18n = {
   en: {
-    nav: { features: 'How It Works', pricing: 'Pricing', cta: 'Apply for Beta' },
+    nav: { features: 'How It Works', pricing: 'Pricing', cta: 'Request Onboarding' },
     hero: {
       badge: 'AI-Native Hotel & Ryokan Agent',
       title1: 'Your hotel.',
       title2: 'Always staffed.',
       sub: 'Lumi is the AI coworker that never sleeps. It monitors rates, answers guests, and updates your PMS — 24 / 7, in Japanese.',
-      cta: 'Apply for Beta Access',
-      ctaSub: 'Accepting 5 properties per month',
+      cta: 'Request Onboarding',
+      ctaSub: 'Now live — accepting new properties',
     },
     trust: {
       sectionBadge: 'Trust by Design',
@@ -85,18 +85,18 @@ const i18n = {
       ],
     },
     waitlist: {
-      sectionBadge: 'Beta Program',
+      sectionBadge: 'Production Onboarding',
       title: 'Accepting 5 properties',
       titleGold: 'per month.',
       sub: 'We onboard slowly. Every property receives white-glove support from our team before going live.',
-      counter: 'Next cohort opens:',
+      counter: 'Next onboarding cohort:',
       nextMonth: 'March 2026',
-      spotsLeft: '3 spots remaining',
+      spotsLeft: '2 spots remaining',
       placeholder: 'Your work email',
-      cta: 'Apply for Beta Access',
+      cta: 'Request Onboarding',
       disclaimer: 'No credit card. No commitment. Cancel anytime.',
       successTitle: 'Application received.',
-      successSub: 'We\'ll review your property and be in touch within 48 hours.',
+      successSub: 'API Compatibility Check Initiated. Our technical concierge will contact you within 24 hours.',
     },
     pricing: {
       sectionBadge: 'Pricing',
@@ -119,14 +119,14 @@ const i18n = {
     },
   },
   jp: {
-    nav: { features: '機能', pricing: '料金', cta: 'ベータ版に申し込む' },
+    nav: { features: '機能', pricing: '料金', cta: '導入を申請する' },
     hero: {
       badge: 'AIネイティブ・ホテル＆旅館エージェント',
       title1: 'あなたのホテルに、',
       title2: 'AIスタッフを。',
       sub: 'Lumiは眠らないAIスタッフです。料金の監視、ゲスト対応、PMSの更新を24時間365日、日本語で行います。',
-      cta: 'ベータ版に申し込む',
-      ctaSub: '毎月5施設まで受付中',
+      cta: '導入を申請する',
+      ctaSub: '製品版リリース済 — 新規施設受付中',
     },
     trust: {
       sectionBadge: '信頼設計',
@@ -188,18 +188,18 @@ const i18n = {
       ],
     },
     waitlist: {
-      sectionBadge: 'ベータプログラム',
+      sectionBadge: '製品版 導入',
       title: '毎月5施設まで',
       titleGold: '受付中。',
       sub: 'すべての施設に白手袋サポートをご提供するため、慎重にオンボーディングしています。',
-      counter: '次のコホート開始：',
+      counter: '次の導入コホート：',
       nextMonth: '2026年3月',
-      spotsLeft: '残り3枠',
+      spotsLeft: '残り2枠',
       placeholder: 'ビジネスメールアドレス',
-      cta: 'ベータ版に申し込む',
+      cta: '導入を申請する',
       disclaimer: 'クレジットカード不要。コミットメント不要。いつでもキャンセル可能。',
       successTitle: '申込みを受け付けました。',
-      successSub: '施設を確認後、48時間以内にご連絡いたします。',
+      successSub: 'API互換性チェックを開始しました。技術担当コンシェルジュが24時間以内にご連絡します。',
     },
     pricing: {
       sectionBadge: '料金',
@@ -637,6 +637,93 @@ const AgentRoster: React.FC<AgentRosterProps> = ({ t }) => (
   </div>
 );
 
+// ─── ZeroMigrationBanner ─────────────────────────────────────────────────────
+
+const PMS_SYSTEMS = [
+  { name: 'Cloudbeds', color: '#E63946' },
+  { name: 'Mews',      color: '#00B4D8' },
+  { name: 'Opera PMS', color: '#F48C06' },
+];
+
+const ZeroMigrationBanner: React.FC<{ lang: Lang }> = ({ lang }) => {
+  const isJP = lang === 'jp';
+  return (
+    <section className="py-10 border-y border-white/5 bg-[#020B18]">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden flex flex-col lg:flex-row">
+
+          {/* Copy */}
+          <div className="p-8 md:p-10 flex-1 border-b lg:border-b-0 lg:border-r border-white/5 flex flex-col justify-center">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/30 font-semibold mb-3">
+              {isJP ? '現在のPMSと即時連携' : 'Connects to your current PMS instantly'}
+            </p>
+            <h3 className="text-3xl md:text-4xl font-medium tracking-tighter mb-2 text-white">
+              {isJP ? '5分で稼働開始。' : 'Live in 5 Minutes.'}
+            </h3>
+            <p className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">
+              {isJP ? 'データ移行ゼロ。' : 'Zero Migration Required.'}
+            </p>
+          </div>
+
+          {/* PMS → FifthKeys Animation */}
+          <div className="p-8 md:p-10 flex items-center justify-center gap-5">
+            {/* PMS badges */}
+            <div className="flex flex-col gap-3 shrink-0">
+              {PMS_SYSTEMS.map(pms => (
+                <div
+                  key={pms.name}
+                  className="px-3 py-1.5 rounded-lg text-xs font-bold border whitespace-nowrap"
+                  style={{ backgroundColor: `${pms.color}18`, borderColor: `${pms.color}40`, color: pms.color }}
+                >
+                  {pms.name}
+                </div>
+              ))}
+            </div>
+
+            {/* Animated connecting lines — one shimmer per PMS */}
+            <div className="flex flex-col gap-[22px] w-24 shrink-0">
+              {PMS_SYSTEMS.map((pms, i) => (
+                <div key={pms.name} className="relative h-px bg-white/[0.08] rounded-full overflow-hidden">
+                  <motion.div
+                    className="absolute inset-y-[-2px] w-10 rounded-full"
+                    style={{
+                      background: `linear-gradient(to right, transparent, ${pms.color}CC, transparent)`,
+                      boxShadow: `0 0 6px 3px ${pms.color}55`,
+                    }}
+                    animate={{ x: ['-40px', '130px'] }}
+                    transition={{
+                      duration: 1.4,
+                      delay: i * 0.38,
+                      repeat: Infinity,
+                      ease: 'linear',
+                      repeatDelay: 0.6,
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* FifthKeys logo — pulses as dots "arrive" */}
+            <motion.div
+              className="w-12 h-12 bg-white text-black rounded-xl flex items-center justify-center font-bold text-lg shrink-0 select-none"
+              animate={{
+                boxShadow: [
+                  '0 0 0px rgba(255,255,255,0.0)',
+                  '0 0 28px rgba(255,255,255,0.35)',
+                  '0 0 0px rgba(255,255,255,0.0)',
+                ],
+              }}
+              transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              F
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ─── FadeIn utility ───────────────────────────────────────────────────────────
 
 interface FadeInProps {
@@ -912,6 +999,9 @@ export default function App() {
             </FadeIn>
           </div>
         </section>
+
+        {/* ── Zero Migration Banner ─────────────────────────────────────────── */}
+        <ZeroMigrationBanner lang={lang} />
 
         {/* ── Pricing ───────────────────────────────────────────────────────── */}
         <section id="pricing" className="py-28 border-t border-white/5">
