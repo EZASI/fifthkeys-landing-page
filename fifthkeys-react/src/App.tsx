@@ -1089,8 +1089,8 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-6 text-xs text-white/30">
-            <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
-            <a href="#" className="hover:text-white transition-colors">{t.footer.terms}</a>
+            <button type="button" className="hover:text-white transition-colors">{t.footer.privacy}</button>
+            <button type="button" className="hover:text-white transition-colors">{t.footer.terms}</button>
             <button
               onClick={() => setLang(l => l === 'en' ? 'jp' : 'en')}
               className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-white/50"
