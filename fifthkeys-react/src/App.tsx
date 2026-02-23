@@ -1,10 +1,21 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import { motion, AnimatePresence as _AnimatePresence, useAnimation } from 'framer-motion';
 import {
-  Globe, BellRing, CheckCircle2, ArrowRight,
+  Globe, CheckCircle2, ArrowRight,
   Bot, Check, Loader2, Mail, Database, Cpu, Radio,
   TrendingUp, Zap, X, Activity, BarChart3, ChevronRight,
 } from 'lucide-react';
+
+// framer-motion 11 declares AnimatePresence returning Element|undefined, but
+// React 18 JSX only accepts Element|null. The cast below is a pure type-level
+// shim — no runtime difference.
+type APProps = {
+  mode?: 'sync' | 'wait' | 'popLayout';
+  initial?: boolean;
+  onExitComplete?: () => void;
+  children?: React.ReactNode;
+};
+const AnimatePresence = _AnimatePresence as unknown as React.FC<APProps>;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -84,11 +95,15 @@ const i18n = {
         },
       ],
     },
+    status: {
+      online: 'System Online. Powering select forward-thinking properties across Japan.',
+    },
     waitlist: {
       sectionBadge: 'Production Onboarding',
       title: 'Accepting 5 properties',
       titleGold: 'per month.',
       sub: 'We onboard slowly. Every property receives white-glove support from our team before going live.',
+      demandNote: 'Due to high demand and our white-glove AI training process, onboarding is strictly limited.',
       counter: 'Next onboarding cohort:',
       nextMonth: 'March 2026',
       spotsLeft: '2 spots remaining',
@@ -187,11 +202,15 @@ const i18n = {
         },
       ],
     },
+    status: {
+      online: 'システム稼働中。全国の厳選された先進的な宿泊施設で導入されています。',
+    },
     waitlist: {
       sectionBadge: '製品版 導入',
       title: '毎月5施設まで',
       titleGold: '受付中。',
       sub: 'すべての施設に白手袋サポートをご提供するため、慎重にオンボーディングしています。',
+      demandNote: '現在、多数の導入待ちが発生しています。AIの学習品質を最高水準に保つため、毎月のオンボーディング枠を厳格に制限しています。',
       counter: '次の導入コホート：',
       nextMonth: '2026年3月',
       spotsLeft: '残り2枠',
@@ -221,7 +240,7 @@ const i18n = {
       terms: '利用規約',
     },
   },
-} as const;
+};
 
 // ─── Grid constants ───────────────────────────────────────────────────────────
 
@@ -293,7 +312,7 @@ const SectionBadge: React.FC<{ label: string }> = ({ label }) => (
 
 // ─── TrustBuilderWidget ───────────────────────────────────────────────────────
 
-interface TrustBuilderProps { t: typeof i18n['en']['trust'] }
+interface TrustBuilderProps { t: (typeof i18n)['en']['trust'] | (typeof i18n)['jp']['trust'] }
 
 const TrustBuilderWidget: React.FC<TrustBuilderProps> = ({ t }) => {
   const [step, setStep] = useState<TrustStep>(0);
@@ -310,7 +329,6 @@ const TrustBuilderWidget: React.FC<TrustBuilderProps> = ({ t }) => {
 
   const handleReset = () => { setStep(0); setDeployIdx(-1); };
 
-  const stepColors = ['cyan', 'amber', 'emerald'] as const;
   const stepBg: Record<number, string> = {
     0: 'bg-cyan-400/20 border-cyan-400/40 text-cyan-400',
     1: 'bg-amber-400/20 border-amber-400/40 text-amber-400',
@@ -448,7 +466,7 @@ const TrustBuilderWidget: React.FC<TrustBuilderProps> = ({ t }) => {
 
 // ─── RoomTetrisVisualizer ─────────────────────────────────────────────────────
 
-interface TetrisProps { t: typeof i18n['en']['tetris']; lang: Lang }
+interface TetrisProps { t: (typeof i18n)['en']['tetris'] | (typeof i18n)['jp']['tetris']; lang: Lang }
 
 const RoomTetrisVisualizer: React.FC<TetrisProps> = ({ t, lang }) => {
   const [revealedCols, setRevealedCols] = useState(0);
@@ -571,7 +589,7 @@ const RoomTetrisVisualizer: React.FC<TetrisProps> = ({ t, lang }) => {
 
 // ─── AgentRoster ──────────────────────────────────────────────────────────────
 
-interface AgentRosterProps { t: typeof i18n['en']['roster'] }
+interface AgentRosterProps { t: (typeof i18n)['en']['roster'] | (typeof i18n)['jp']['roster'] }
 
 const AGENT_GLOW: Record<string, string> = {
   cyan:   'from-cyan-500/20 to-transparent',
@@ -635,6 +653,22 @@ const AgentRoster: React.FC<AgentRosterProps> = ({ t }) => (
       );
     })}
   </div>
+);
+
+// ─── ExclusivityStatusBanner ─────────────────────────────────────────────────
+
+const ExclusivityStatusBanner: React.FC<{ statusText: string }> = ({ statusText }) => (
+  <motion.section
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.8, delay: 0.5 }}
+    className="border-y border-white/5 bg-transparent backdrop-blur-sm py-4"
+  >
+    <div className="max-w-7xl mx-auto px-6 flex items-center justify-center gap-3">
+      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+      <p className="text-sm text-white/50 font-light tracking-wide">{statusText}</p>
+    </div>
+  </motion.section>
 );
 
 // ─── ZeroMigrationBanner ─────────────────────────────────────────────────────
@@ -877,6 +911,9 @@ export default function App() {
           </div>
         </section>
 
+        {/* ── Exclusivity Status Banner ─────────────────────────────────────── */}
+        <ExclusivityStatusBanner statusText={t.status.online} />
+
         {/* ── Trust Builder ─────────────────────────────────────────────────── */}
         <section id="how" className="py-28 border-t border-white/5 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/20 to-transparent pointer-events-none" />
@@ -941,6 +978,11 @@ export default function App() {
                 <span className="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">{t.waitlist.titleGold}</span>
               </h2>
               <p className="text-lg text-white/50 mb-8 leading-relaxed">{t.waitlist.sub}</p>
+
+              {/* High-demand note */}
+              <p className="text-xs text-white/35 mb-6 leading-relaxed max-w-sm mx-auto">
+                {t.waitlist.demandNote}
+              </p>
 
               {/* Urgency counter */}
               <div className="inline-flex items-center gap-4 px-6 py-4 bg-white/[0.04] border border-white/10 rounded-2xl mb-10 backdrop-blur-md">
