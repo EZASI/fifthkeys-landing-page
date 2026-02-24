@@ -531,11 +531,10 @@ const RoomTetrisVisualizer: React.FC<TetrisProps> = ({ t, lang }) => {
               <span className="text-xs text-white/30 font-mono">{room}</span>
             </div>
             {Array.from({ length: 7 }, (_, cIdx) => (
-              <motion.div
+              <div
                 key={cIdx}
                 className="h-8 rounded-md"
-                animate={{ backgroundColor: cellColor(rIdx, cIdx) }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
+                style={{ backgroundColor: cellColor(rIdx, cIdx), transition: 'background-color 0.25s ease-out' }}
               />
             ))}
           </div>
